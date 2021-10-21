@@ -80,7 +80,7 @@
 </template>
 
 <script>
-import { getTopic } from '@/api/post'
+import { deleteTopic, getTopic } from '@/api/post'
 import { mapGetters } from 'vuex'
 
 import Author from '@/views/post/Author'
@@ -131,18 +131,18 @@ export default {
         this.flag = true
       })
     },
-    // handleDelete(id) {
-    //   deleteTopic(id).then(value => {
-    //     const { code, message } = value
-    //     alert(message)
+    handleDelete(id) {
+      deleteTopic(id).then(value => {
+        const { code, message } = value
+        alert(message)
 
-    //     if (code === 200) {
-    //       setTimeout(() => {
-    //         this.$router.push({ path: '/' })
-    //       }, 500)
-    //     }
-    //   })
-    // }
+        if (code === 200) {
+          setTimeout(() => {
+            this.$router.push({ path: '/' })
+          }, 500)
+        }
+      })
+    }
   }
 }
 </script>
