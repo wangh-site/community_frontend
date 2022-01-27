@@ -55,6 +55,7 @@ export default {
         postData['topic_id'] = this.slug
         await pushComment(postData)
         this.$emit('loadComments', this.slug)
+        this.commentText=''
         this.$message.success('留言成功')
       } catch (e) {
         this.$buefy.toast.open({
