@@ -22,7 +22,7 @@ service.interceptors.request.use(
       // config.params = {'token': token}    // 如果要求携带在参数中
       // config.headers.token = token;       // 如果要求携带在请求头中
       // bearer：w3c规范
-      config.headers['Authorization'] = 'Bearer ' + getToken()
+      config.headers['Authorization'] = getToken()
     }
     return config
   },
