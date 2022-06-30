@@ -137,10 +137,10 @@ export default {
     init(tab) {
       getList(this.page.current, this.page.size, tab).then((response) => {
         const { data } = response
-        this.page.current = data.current
+        // this.page.current = data.current
         this.page.total = data.total
-        this.page.size = data.size
-        this.articleList = data.records
+        // this.page.size = data.size
+        this.articleList = data.list
       })
     },
     handleClick(tab) {
