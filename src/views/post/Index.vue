@@ -53,7 +53,7 @@
             <article v-for="(item, index) in articleList" :key="index" class="media">
               <div class="media-left">
                 <figure class="image is-48x48">
-                  <img :src="`https://cn.gravatar.com/avatar/${item.userId}?s=164&d=monsterid`" style="border-radius: 5px;">
+                  <img :src="`${item.avatar}`" style="border-radius: 5px;">
                 </figure>
               </div>
               <div class="media-content">
@@ -137,10 +137,10 @@ export default {
     init(tab) {
       getList(this.page.current, this.page.size, tab).then((response) => {
         const { data } = response
-        this.page.current = data.current
+        // this.page.current = data.current
         this.page.total = data.total
-        this.page.size = data.size
-        this.articleList = data.records
+        // this.page.size = data.size
+        this.articleList = data.list
       })
     },
     handleClick(tab) {
