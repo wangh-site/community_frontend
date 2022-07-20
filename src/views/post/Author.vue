@@ -76,7 +76,12 @@ export default {
       if(this.token != null && this.token !== '')
       {
         follow(id).then(response => {
+
           const { message } = response
+          if (message == "无法关注自己"){
+            this.$message.warning(message)
+            return
+          }
           this.$message.success(message)
           this.hasFollow = !this.hasFollow
           this.user.followerCount = parseInt(this.user.followerCount) + 1

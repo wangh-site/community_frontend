@@ -50,6 +50,9 @@ export default {
       this.isLoading = true
       try {
         let postData = {}
+        if(this.commentText == ''){
+          return;
+        }
         console.log(this.commentText)
         postData['content'] = this.commentText
         postData['topic_id'] = this.slug
